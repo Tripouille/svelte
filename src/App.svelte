@@ -5,7 +5,7 @@
 
 <main>
 	<h1>Hello {name}!</h1>
-	<p>{beltColour} belt</p>
+	<p style='color: {beltColour}'>{beltColour} belt</p>
 	<input type='text' bind:value={beltColour} />
 </main>
 
