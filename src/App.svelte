@@ -1,16 +1,12 @@
 <script>
 	let name = 'Yoshi';
 	let beltColour = 'black';
-
-	const handleInputChange = (e) => {
-		beltColour = e.target.value;
-	};
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
 	<p>{beltColour} belt</p>
-	<input type='text' value={beltColour} on:input={handleInputChange}/>
+	<input type='text' bind:value={beltColour} />
 </main>
 
 <style>
