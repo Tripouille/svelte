@@ -1,11 +1,14 @@
 <script>
-	let name = 'Yoshi';
+	let firstName = 'Jimi';
+	let lastName = 'Hendrix';
 	let beltColour = 'black';
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p style='color: {beltColour}'>{beltColour} belt</p>
+	<p style='color: {beltColour}'>{firstName} {lastName} - {beltColour} belt</p>
+
+	<input type='text' bind:value={firstName} />
+	<input type='text' bind:value={lastName} />
 	<input type='text' bind:value={beltColour} />
 </main>
 
