@@ -1,20 +1,18 @@
 <script>
-	let firstName = 'Jimi';
-	let lastName = 'Hendrix';
-	let beltColour = 'black';
-	$: fullName = `${firstName} ${lastName}`;
-	$: {
-		console.log(beltColour);
-		fullName;
-	}
+	let people = [
+		{name: 'yoshi', beltColour: 'black', age: 25, id: 1},	
+		{name: 'mario', beltColour: 'orange', age: 45, id: 2},	
+		{name: 'luigi', beltColour: 'brown', age: 35, id: 3},	
+	];
 </script>
 
 <main>
-	<p style='color: {beltColour}'>{fullName} - {beltColour} belt</p>
-
-	<input type='text' bind:value={firstName} />
-	<input type='text' bind:value={lastName} />
-	<input type='text' bind:value={beltColour} />
+	{#each people as person (person.id)}
+		<div>
+			<h4>{person.name}</h4>
+			<p style='color: {person.beltColour}'>{person.age} years old, {person.beltColour} belt.</p>
+		</div>
+	{/each}
 </main>
 
 <style>
