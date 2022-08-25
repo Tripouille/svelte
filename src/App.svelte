@@ -1,10 +1,16 @@
 <script>
-	export let name;
+	let name = 'Yoshi';
+	let beltColour = 'black';
+
+	const handleInputChange = (e) => {
+		beltColour = e.target.value;
+	};
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<p>{beltColour} belt</p>
+	<input type='text' value={beltColour} on:input={handleInputChange}/>
 </main>
 
 <style>
