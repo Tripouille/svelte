@@ -2,10 +2,15 @@
 	let firstName = 'Jimi';
 	let lastName = 'Hendrix';
 	let beltColour = 'black';
+	$: fullName = `${firstName} ${lastName}`;
+	$: {
+		console.log(beltColour);
+		fullName;
+	}
 </script>
 
 <main>
-	<p style='color: {beltColour}'>{firstName} {lastName} - {beltColour} belt</p>
+	<p style='color: {beltColour}'>{fullName} - {beltColour} belt</p>
 
 	<input type='text' bind:value={firstName} />
 	<input type='text' bind:value={lastName} />
