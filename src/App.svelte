@@ -21,6 +21,8 @@ h1 {
 </style>
 
 <script>
+import Modal from "./Modal.svelte";
+
 let people = [
   { name: "yoshi", beltColour: "black", age: 25, id: 1 },
   { name: "mario", beltColour: "orange", age: 45, id: 2 },
@@ -33,15 +35,23 @@ function deletePersonById(id) {
   };
 }
 let num = 4;
+let showModal = true;
 </script>
+
+<label for="show-modal">
+	Show Modal
+  <input type="checkbox" id="show-modal" bind:checked={showModal} />
+</label>
+
+<Modal showModal={showModal} />
 
 <main>
   {#each people as person (person.id)}
     <div>
       <h4>{person.name}</h4>
-			{#if person.beltColour === 'black'}
-				<p><strong>Master Ninja</strong></p>
-			{/if}
+      {#if person.beltColour === "black"}
+        <p><strong>Master Ninja</strong></p>
+      {/if}
       <p class="badge" style="color: {person.beltColour}">
         {person.age} years old, {person.beltColour} belt.
       </p>
