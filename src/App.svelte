@@ -8,6 +8,7 @@
 </style>
 
 <script>
+  import AddPersonForm from "./AddPersonForm.svelte";
   import Modal from "./Modal.svelte";
 
   let people = [
@@ -28,22 +29,17 @@
     showModal = !showModal;
   }
 
-  function addNewPerson({ target }) {
-    const { value: name } = target.name;
-    const { value: beltColour } = target.beltColour;
-    people = people.concat({ name, beltColour, age: 18, id: people.length });
-    showModal = false;
+  function addPerson(event) {
+    console.log(event);
+    people = [event.detail, ...people];
+    toggleModal();
   }
 </script>
 
 <main>
   <Modal {showModal} isPromo on:click={toggleModal}>
     <h3>Add a New Person</h3>
-    <form on:submit|preventDefault={addNewPerson}>
-      <input type="text" placeholder="name" id="name" />
-      <input type="text" placeholder="belt colour" id="beltColour" />
-      <button type="submit">Add Person</button>
-    </form>
+    <AddPersonForm on:addPerson={addPerson} />
   </Modal>
   <button on:click={toggleModal}>Show New Person modal</button>
   {#each people as person (person.id)}
