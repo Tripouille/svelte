@@ -32,12 +32,16 @@ function deletePersonById(id) {
     people = people.filter((person) => person.id !== id);
   };
 }
+let num = 4;
 </script>
 
 <main>
   {#each people as person (person.id)}
     <div>
       <h4>{person.name}</h4>
+			{#if person.beltColour === 'black'}
+				<p><strong>Master Ninja</strong></p>
+			{/if}
       <p class="badge" style="color: {person.beltColour}">
         {person.age} years old, {person.beltColour} belt.
       </p>
