@@ -18,6 +18,6 @@
 <header>
   <h1>
     <img src="/images/ninja.png" alt="Poll Ninja Logo" height="100px" />
-    <span>Ninja Poll</span>
+    <span>Poll Ninja</span>
   </h1>
 </header>

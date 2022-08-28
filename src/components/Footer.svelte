@@ -15,5 +15,5 @@
 <script></script>
 
 <footer>
-  <div class="copyright">Copyright 2022 Ninja Poll</div>
+  <div class="copyright">Copyright 2022 Poll Ninja</div>
 </footer>
